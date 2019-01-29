@@ -1,26 +1,28 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
-import PropTypes from "prop-types";
-import SEO from "../components/SEO";
-import Card from "../components/Card";
-import Page from "../components/Page";
-import HomeFeatures from "../components/HomeFeatures";
-import Button from "@material-ui/core/Button";
-import Carousel from "../components/Carousel";
-import Grid from "@material-ui/core/Grid";
-import Avatar from "@material-ui/core/Avatar";
-import { Gift } from "mdi-material-ui";
-import { withStyles } from "@material-ui/core/styles";
-import withRoot from "../utils/withRoot";
-import Hidden from "@material-ui/core/Hidden";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import SEO from '../components/SEO'
+import Card from '../components/Card'
+import Page from '../components/Page'
+import HomeFeatures from '../components/HomeFeatures'
+import Chip from '../components/Chip'
+import Button from '@material-ui/core/Button'
+import Carousel from '../components/Carousel'
+import Grid from '@material-ui/core/Grid'
+import Avatar from '@material-ui/core/Avatar'
+import { Gift } from 'mdi-material-ui'
+import { withStyles } from '@material-ui/core/styles'
+import withRoot from '../utils/withRoot'
+import Hidden from '@material-ui/core/Hidden'
+import { unstable_Box as Box } from '@material-ui/core/Box'
 
 const styles = theme => ({
     root: {
-      backgroundColor: "#9c27b0",
-    },
+      backgroundColor: '#9c27b0'
+    }
   }),
   Home = props => {
-    const markdown = props.data.allMarkdownRemark.edges;
+    const markdown = props.data.allMarkdownRemark.edges
     return (
       <Hidden implementation="css">
         <Page title="Gatsby Material UI Business Starter">
@@ -30,8 +32,10 @@ const styles = theme => ({
               content="Beautiful Gatsby Material UI Business Starter. Tiny code. Well organized. Ready to customize and go."
             />
           </SEO>
-
           <HomeFeatures />
+          <Box m={10} p={10}>
+            <Chip label="My Chip" />
+          </Box>
           <Grid
             spacing={24}
             container
@@ -65,8 +69,8 @@ const styles = theme => ({
           </Grid>
         </Page>
       </Hidden>
-    );
-  };
+    )
+  }
 
 export const query = graphql`
   query {
@@ -88,10 +92,10 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 Home.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+  classes: PropTypes.object.isRequired
+}
 
-export default withRoot(withStyles(styles)(Home));
+export default withRoot(withStyles(styles)(Home))

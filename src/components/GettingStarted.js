@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import {
   Grid,
   Paper,
@@ -10,25 +10,37 @@ import {
   Tabs,
   TextField,
   Typography
-} from "@material-ui/core";
-import { navigate } from "@reach/router";
-// import { unstable_Box as Box } from "@material-ui/core/Box";
-import { Formik, Field } from "formik";
-import { TextField as ConnectedTextField } from "formik-material-ui";
-import { palette, spacing, typography } from "@material-ui/system";
-import styled from "styled-components";
+} from '@material-ui/core'
+import { navigate } from '@reach/router'
+import { unstable_Box as Box } from '@material-ui/core/Box'
+import { Formik, Field } from 'formik'
+import { TextField as ConnectedTextField } from 'formik-material-ui'
+import {
+  palette,
+  spacing,
+  sizing,
+  typography,
+  compose
+} from '@material-ui/system'
+import { styled } from '@material-ui/styles'
 
-const Box = styled.div`${palette}${spacing}${typography}`;
+// const Box = styled('div')(
+//   compose(
+//     spacing,
+//     sizing,
+//     palette
+//   )
+// )
 class GettingStarted extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       tabIndex: 0
-    };
+    }
   }
 
   render() {
-    const { tabIndex } = this.state;
+    const { tabIndex } = this.state
     return (
       <React.Fragment>
         <Box mt={10}>
@@ -39,7 +51,7 @@ class GettingStarted extends Component {
                 value={tabIndex}
                 variant="fullWidth"
                 onChange={(e, tabIndex) => {
-                  this.setState({ tabIndex });
+                  this.setState({ tabIndex })
                 }}
               >
                 <Tab label="person" />
@@ -49,13 +61,13 @@ class GettingStarted extends Component {
           </Box>
           {tabIndex === 0 ? (
             <Formik
-              initialValues={{ name: "" }}
+              initialValues={{ name: '' }}
               onSubmit={(values, { setSubmitting }) => {
-                console.log(values);
-                setSubmitting(false);
+                console.log(values)
+                setSubmitting(false)
                 // set user and roles context
                 // go to app home
-                navigate("/app/e/0");
+                navigate('/app/e/0')
               }}
               render={({ submitForm, isSubmitting }) => (
                 <Box mx="auto" maxWidth={600}>
@@ -132,7 +144,7 @@ class GettingStarted extends Component {
           )}
         </Box>
       </React.Fragment>
-    );
+    )
   }
 }
-export default GettingStarted;
+export default GettingStarted
