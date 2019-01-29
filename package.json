@@ -12,6 +12,10 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.9.0",
+    "@material-ui/styles": "^3.0.0-alpha.9",
+    "@material-ui/system": "^3.0.0-alpha.2",
+    "formik": "^1.4.3",
+    "formik-material-ui": "^0.0.16",
     "gatsby": "^2.0.98",
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
@@ -28,6 +32,7 @@
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1",
     "react-swipeable-views": "^0.13.1",
-    "react-swipeable-views-utils": "^0.13.1"
+    "react-swipeable-views-utils": "^0.13.1",
+    "styled-components": "^4.1.3"
   }
 }

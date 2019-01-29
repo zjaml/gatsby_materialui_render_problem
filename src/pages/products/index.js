@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import { unstable_Box as Box } from "@material-ui/core/Box";
 
 const Products = props => {
   const products = props.data.allMarkdownRemark.edges;
@@ -20,12 +21,13 @@ const Products = props => {
         alignItems="flex-start"
         justify="center"
       >
+        <Box m={10} bgcolor="primary" width={100} height={100} />
         {products.map(edge => {
           const {
             node: {
               excerpt,
-              frontmatter: { path, title, image },
-            },
+              frontmatter: { path, title, image }
+            }
           } = edge;
           return (
             <Grid item xs={12} md={6} key={path}>
